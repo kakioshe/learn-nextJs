@@ -1,12 +1,22 @@
 import Link from 'next/link';
+import Layout from '../components/Layout';
+
+const PostLink = props => (
+  <li>
+    <Link href={`/post?title=${props.title}`}>
+      <a>{props.title}</a>
+    </Link>
+  </li>
+);
 
 const Index = () => (
-  <div>
+  <Layout>
     <p>Hello, Next!</p>
-    <Link href="/about">
-      <a title="about page">About Page</a>
-    </Link>
-  </div>
+    <ul>
+      <PostLink title="Hello Next.js"/>
+      <PostLink title="Learning things"/>
+    </ul>
+  </Layout>
 );
 
 export default Index;
