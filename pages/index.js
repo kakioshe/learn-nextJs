@@ -3,8 +3,8 @@ import Layout from '../components/Layout';
 
 const PostLink = props => (
   <li>
-    <Link href={`/post?title=${props.title}`}>
-      <a>{props.title}</a>
+    <Link href="/p/[id]" as={`/p/${props.id}`}>
+      <a>{props.id}</a>
     </Link>
   </li>
 );
@@ -13,8 +13,9 @@ const Index = () => (
   <Layout>
     <p>Hello, Next!</p>
     <ul>
-      <PostLink title="Hello Next.js"/>
-      <PostLink title="Learning things"/>
+      <PostLink id="hello-nextjs"/>
+      <PostLink id="learn-nextjs"/>
+      <PostLink id="deploy-nextjs"/>
     </ul>
   </Layout>
 );
